@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="佟禹萱 — 电子商务专业个人简历">
+<title>佟禹萱 · 个人简历</title>
+<style>
+  :root {
+    --primary: #2c5f8a;
+    --primary-light: #4a86b8;
+    --accent: #e8a33d;
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --text: #2d3748;
+    --text-light: #64748b;
+    --border: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+  }
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+  }
+
+  /* ===== 头部 ===== */
+  .header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 48px 48px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    box-shadow: 0 10px 30px rgba(44, 95, 138, 0.25);
+  }
+  .header h1 {
+    font-size: 40px;
+    letter-spacing: 6px;
+    margin-bottom: 8px;
+  }
+  .header .tagline {
+    font-size: 16px;
+    opacity: 0.92;
+    margin-bottom: 16px;
+  }
+  .header .contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    font-size: 14px;
+    opacity: 0.95;
+  }
+  .avatar {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 46px;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  /* ===== 主体 ===== */
+  .main { margin-top: 28px; display: grid; grid-template-columns: 1fr; gap: 22px; }
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    padding: 28px 32px;
+    box-shadow: 0 2px 10px rgba(45, 55, 72, 0.06);
+    border: 1px solid var(--border);
+  }
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 18px;
+  }
+  .section-title::before {
+    content: "";
+    width: 6px;
+    height: 22px;
+    background: var(--accent);
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  /* ===== 教育背景 ===== */
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  .edu-item:last-child { border-bottom: none; }
+  .edu-item .school { font-size: 17px; font-weight: 700; }
+  .edu-item .major { color: var(--text-light); font-size: 14px; margin-top: 4px; }
+  .edu-item .date {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .edu-desc { margin-top: 6px; font-size: 14px; color: var(--text-light); }
+
+  /* ===== 技能 ===== */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+  .skill-item .skill-head {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .skill-item .skill-head span:last-child { color: var(--text-light); font-weight: 400; font-size: 13px; }
+  .bar { height: 8px; background: #edf2f7; border-radius: 4px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--primary-light), var(--primary)); border-radius: 4px; }
+
+  /* ===== 时间线条目 ===== */
+  .item { padding: 16px 0; border-bottom: 1px dashed var(--border); }
+  .item:last-child { border-bottom: none; }
+  .item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .item-title { font-size: 16px; font-weight: 700; }
+  .item-title .role { color: var(--primary); font-size: 14px; font-weight: 600; margin-left: 8px; }
+  .item-date { color: var(--text-light); font-size: 13px; white-space: nowrap; }
+  .item ul { margin: 8px 0 0 20px; color: var(--text-light); font-size: 14px; }
+  .item ul li { margin-bottom: 4px; }
+
+  /* ===== 自我评价 ===== */
+  .self-eval {
+    background: linear-gradient(135deg, #fdf8ef 0%, #fff 100%);
+    border: 1px solid #f3e3c3;
+  }
+  .self-eval p { font-size: 15px; margin-bottom: 10px; }
+  .self-eval p:last-child { margin-bottom: 0; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .keywords span {
+    background: rgba(44, 95, 138, 0.08);
+    color: var(--primary);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 13px;
+    margin-top: 36px;
+  }
+
+  @media (max-width: 640px) {
+    .header { padding: 32px 24px; flex-direction: column-reverse; text-align: center; }
+    .header .contact-list { justify-content: center; }
+    .card { padding: 22px 20px; }
+  }
+  @media print {
+    body { background: #fff; }
+    .header { box-shadow: none; }
+    .card { box-shadow: none; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 头部 -->
+  <header class="header">
+    <div>
+      <h1>佟禹萱</h1>
+      <div class="tagline">电子商务专业 · 本科在读（大四） | 求职意向：电商运营 / 跨境电商 / 新媒体运营</div>
+      <div class="contact-list">
+        <span>📍 辽宁 · 大连</span>
+        <span>🎂 2005.12</span>
+        <span>🎓 大连财经学院 · 商学院</span>
+        <span>✉️ tongyuxuan@example.com</span>
+        <span>📞 138-XXXX-XXXX</span>
+      </div>
+    </div>
+    <div class="avatar">禹萱</div>
+  </header>
+
+  <div class="main">
+
+    <!-- 教育背景 -->
+    <section class="card">
+      <h2 class="section-title">教育背景</h2>
+      <div class="edu-item">
+        <div>
+          <div class="school">大连财经学院 · 商学院</div>
+          <div class="major">电子商务专业 · 全日制本科在读（2024 级 — 2028 届预期）</div>
+          <div class="edu-desc">主修课程：电子商务概论、网络营销、跨境电子商务、网店运营与管理、电子商务数据分析、网页设计与制作、消费者行为学、供应链管理、新媒体运营</div>
+        </div>
+        <div class="date">2024.09 — 至今</div>
+      </div>
+    </section>
+
+    <!-- 实训与项目经历 -->
+    <section class="card">
+      <h2 class="section-title">实训与项目经历</h2>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">跨境电商平台对比分析实训 <span class="role">独立完成</span></div>
+          <div class="item-date">2026</div>
+        </div>
+        <ul>
+          <li>对主流跨境电商平台（亚马逊、速卖通、Shopee、Temu 等）进行多维度对比分析，覆盖入驻门槛、佣金模式、物流体系、目标市场等要素</li>
+          <li>撰写对比分析报告，形成结构化平台选择建议，锻炼了行业调研与商业分析能力</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-head">
+          <div class="item-title">个人简历多版本设计与制作 <span class="role">设计 &amp; 开发</span></div>
+          <div class="item-date">2026</div>
+        </div>
+        <ul>
+          <li>使用 Word、PowerPoint、HTML+CSS 三种载体独立完成个人简历的排版与制作</li>
+          <li>使用 HBuilderX 完成静态网页开发，掌握 HTML 结构化排版与 CSS 样式设计</li>
+          <li>将网页版简历部署上线，并通过 Git 发布至 GitHub / Gitee 代码托管平台</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 专业技能 -->
+    <section class="card">
+      <h2 class="section-title">专业技能</h2>
+      <div class="skills">
+        <div class="skill-item">
+          <div class="skill-head"><span>Office 办公软件（Word / PPT / Excel）</span><span>熟练</span></div>
+          <div class="bar"><i style="width: 90%"></i></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>HTML / CSS 静态网页开发（HBuilderX）</span><span>掌握</span></div>
+          <div class="bar"><i style="width: 75%"></i></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>跨境电商平台操作与规则</span><span>掌握</span></div>
+          <div class="bar"><i style="width: 75%"></i></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>电商数据分析基础</span><span>良好</span></div>
+          <div class="bar"><i style="width: 70%"></i></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>新媒体内容策划与文案写作</span><span>良好</span></div>
+          <div class="bar"><i style="width: 70%"></i></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-head"><span>Git / GitHub / Gitee 代码托管</span><span>入门</span></div>
+          <div class="bar"><i style="width: 55%"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 自我评价 -->
+    <section class="card self-eval">
+      <h2 class="section-title">自我评价</h2>
+      <p>电子商务专业本科在读，专业基础扎实，熟悉电商运营与跨境电商业务流程，具备一定的网页制作与数据分析能力。学习能力强，做事认真细致，能独立完成从调研、策划到落地执行的全流程任务。</p>
+      <p>乐于接受新事物，对电商行业与新媒体领域保持持续关注与热情，期望在实践中不断提升专业能力。</p>
+      <div class="keywords">
+        <span># 认真负责</span><span># 快速学习</span><span># 独立执行</span><span># 团队协作</span><span># 电商思维</span>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    © 2026 佟禹萱 · 个人简历 | 本页面由本人使用 HTML + CSS 独立制作
+  </footer>
+</div>
+</body>
+</html>
