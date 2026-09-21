@@ -7,6 +7,7 @@
 - 外网地址：https://c6f4728943da4af6a22a96c56015615d.app.workbuddy.host
 - GitHub Pages：https://tongyuxuan1207.github.io/resume/
 - GitHub 仓库：https://github.com/tongyuxuan1207/resume
+- Gitee 仓库：https://gitee.com/tongyuxuan/resume（目前因新账号安全评级为私有，需在 Gitee 后台绑定第三方账号后再设为公开）
 
 ## 内容模块
 
