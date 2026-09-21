@@ -5,6 +5,8 @@
 ## 在线预览
 
 - 外网地址：https://c6f4728943da4af6a22a96c56015615d.app.workbuddy.host
+- GitHub Pages：https://tongyuxuan1207.github.io/resume/
+- GitHub 仓库：https://github.com/tongyuxuan1207/resume
 
 ## 内容模块
 
